@@ -1,0 +1,29 @@
+<h1>User Login</h1>
+<div class="blog_form">
+  <% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+  <%= form_tag do %>
+    <fieldset>
+      <legend>Please Log In</legend>
+
+      <div>
+        <%= label_tag :name, 'Name:' %>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+      <div>
+        <%= label_tag :password, 'Password:' %>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+      <div>
+        <%= submit_tag "Login" %>
+      </div>
+      <div>
+        <a href="http://localhost:3000/users/new">New User?</a>
+      </div>
+      <div>
+        <a href="http://localhost:3000/logout">Logout</a>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
